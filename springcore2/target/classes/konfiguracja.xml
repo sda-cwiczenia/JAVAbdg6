@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--<bean id="MyEnginDiesel" class="zad1.EnginDiesel">-->
+        <!--<property name="power" value="115"/>-->
+    <!--</bean>-->
+
+    <bean id="addParameter" class="zad1.AddParam"/>
+
+    <bean id="MyEnginDiesel" class="zad1.EnginDiesel" p:power="115"/>
+
+    <!--<bean id="MyEnginFuel" class="zad1.EnginFuel">-->
+        <!--<property name="power" value="125"/>-->
+    <!--</bean>-->
+
+    <bean id="autoFactory" class="zad1.AutoFactory">
+
+    </bean>
+
+    <bean id="myAuto" class="zad1.Audi">
+        <property name="addParam"><null/></property>
+        <constructor-arg>
+            <bean class="zad1.EnginFuel">
+                <property name="power" value="125"/>
+            </bean>
+        </constructor-arg>
+        <constructor-arg name="model" value="A6"/>
+    </bean>
+
+    <!--<bean id="myAuto" class="zad1.Audi" c:engin-ref="MyEnginDiesel" c:model="A6" factory-method="createAuto">-->
+
+    <!--</bean>-->
+
+
+
+</beans>
