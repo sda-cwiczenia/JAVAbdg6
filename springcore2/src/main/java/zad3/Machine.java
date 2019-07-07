@@ -3,10 +3,12 @@ package zad3;
 
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
+@Component
 public class Machine implements InitializingBean, DisposableBean {
     Engine engine1;
     Engine engine2;
@@ -19,6 +21,12 @@ public class Machine implements InitializingBean, DisposableBean {
         this.engine2 = engine2;
         this.engineType = engineType;
     }
+
+//    public Machine() {
+//        engine1 = new Engine("Silnik 1");
+//        engine2 = new Engine("Silnik 2");
+//        engineType = new EngineType("Silniki krokowe");
+//    }
 
     void init() {
         System.out.println("Odpalam maszynę!");

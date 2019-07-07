@@ -9,7 +9,7 @@ public class App {
     public static void main(String[] args) {
         AbstractApplicationContext context = new AnnotationConfigApplicationContext(MyConfiguration.class);
         context.registerShutdownHook();
-        Machine machine = context.getBean("getMachine",Machine.class);
+        Machine machine = context.getBean(Machine.class);
         System.out.println(machine);
     }
 }

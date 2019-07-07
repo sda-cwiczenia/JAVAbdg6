@@ -3,19 +3,20 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!--<bean id="engine1" class="zad3.Engine" autowire-candidate="false">-->
+    <bean id="engine1" class="zad3.Engine" autowire-candidate="false">
         <!--<property name="name" value="Engine 1"/>-->
-    <!--</bean>-->
-    <bean id="engine2" class="zad3.Engine">
-        <property name="name" value="Engine 2"/>
+        <constructor-arg value="Engine 1"/>
     </bean>
+    <!--<bean id="engine2" class="zad3.Engine">-->
+        <!--<property name="name" value="Engine 2"/>-->
+    <!--</bean>-->
     <bean id="engineType" class="zad3.EngineType">
         <property name="engineType" value="Silnik krokowy"/>
     </bean>
 
-    <!--<bean id="machine1" class="zad3.Machine" autowire="constructor" init-method="init" destroy-method="byebye">-->
+    <bean id="machine1" class="zad3.Machine" autowire="byType" init-method="init" destroy-method="byebye">
         <!--<constructor-arg name="engine2" ref="engine1"/>-->
-    <!--</bean>-->
+    </bean>
 
 
 

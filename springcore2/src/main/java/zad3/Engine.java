@@ -4,11 +4,14 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 @Component
-@Primary
-@Qualifier("engine1")
+//@Primary
+//@Qualifier("engine1")
 public class Engine {
+    @Value("Silnik 1")
     private String name;
 
     public Engine() {
@@ -21,7 +24,8 @@ public class Engine {
     public String getName() {
         return name;
     }
-@Value("Class Engin 1")
+//@Value("Class Engin 1")
+
     public void setName(String name) {
         this.name = name;
     }
@@ -32,4 +36,5 @@ public class Engine {
                 "name='" + name + '\'' +
                 '}';
     }
+
 }
