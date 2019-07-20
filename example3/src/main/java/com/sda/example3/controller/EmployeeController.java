@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
 import java.math.BigDecimal;
@@ -63,6 +64,8 @@ public class EmployeeController {
 
         return "redirect:/employee/add-success";
     }
+
+    @PostMapping()
 
     @GetMapping("/add-success")
     public String employeeAddSuccess() {
